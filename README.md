@@ -6,10 +6,12 @@ Original REPO and docs can be found here:
 
 If you are preparing for CKA, CKAD or CKS exam, save $57 using code **DCUBEOFFER** at https://kube.promo/latest
 
+
 ## Prerequisites
 
 1. Working Vagrant setup
 2. 8 Gig + RAM workstation as the Vms use 3 vCPUS and 4+ GB RAM
+3. VMware Fusion
  
 ## Usage/Examples
 
