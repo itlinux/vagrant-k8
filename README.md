@@ -1,4 +1,4 @@
-# Vagrantfile and Scripts to Automate Kubernetes Setup using Kubeadm 
+# Vagrantfile and Scripts to Automate Kubernetes Setup using Kubeadm  on VMware Fusion
 
 ## Documentation
 Original REPO and docs can be found here: 
