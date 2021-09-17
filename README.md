@@ -17,15 +17,15 @@ If you are preparing for CKA, CKAD or CKS exam, save $57 using code **DCUBEOFFER
 To provision the cluster, execute the following commands.
 
 ```shell
-git clone https://github.com/scriptcamp/vagrant-kubeadm-kubernetes.git
-cd vagrant-kubeadm-kubernetes
+git clone https://github.com/itlinux/vagrant-k8
+cd vagrant-k8
 vagrant up
 ```
 
 ## Set Kubeconfig file varaible.
 
 ```shell
-cd vagrant-kubeadm-kubernetes
+cd vagrant-k8
 cd configs
 export KUBECONFIG=$(PWD)/config
 ```
@@ -47,7 +47,7 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 Vagrant up will create the admin user token and saves in the configs directory.
 
 ```shell
-cd vagrant-kubeadm-kubernetes
+cd vagrant-k8
 cd configs
 cat token
 ```
@@ -76,3 +76,9 @@ vagrant destroy -f
 
 If you want Centos based setup, please refer https://github.com/marthanda93/VAAS
   
+
+## Credit 
+The original repo comes from 
+    https://github.com/scriptcamp/vagrant-kubeadm-kubernetes
+
+I have applied some changes to what I see fit better on my use. 
