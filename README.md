@@ -51,6 +51,8 @@ cd vagrant-kubeadm-kubernetes
 cd configs
 cat token
 ```
+## Helm
+I have added HELM, so it's easy to install ingress or other services using the nice helm tool. 
 
 ## To shutdown the cluster, 
 
