@@ -36,9 +36,15 @@ kubeadm token create --print-join-command > /vagrant/configs/join.sh
 
 # Install Calico Network Plugin
 
-curl https://docs.projectcalico.org/manifests/calico.yaml -O
+# curl https://docs.projectcalico.org/manifests/calico.yaml -O
 
-kubectl apply -f calico.yaml
+# kubectl apply -f calico.yaml
+
+
+# Install antrea
+
+curl https://raw.githubusercontent.com/antrea-io/antrea/main/build/yamls/antrea.yml -O
+kubectl apply -f antrea.yml
 
 # Install Metrics Server
 
@@ -80,12 +86,6 @@ mkdir -p /home/vagrant/.kube
 sudo cp -i /vagrant/configs/config /home/vagrant/.kube/
 sudo chown 1000:1000 /home/vagrant/.kube/config
 sudo apt -y install bash-completion
-sudo echo "alias k=kubectl" >>/home/vagrant/.bashrc
-sudo echo "source <(kubeadm completion bash)" >> /home/vagrant/.bashrc
-sudo echo "source <(kubectl completion bash |sed s/kubectl/k/g)" >>/home/vagrant/.bashrc
-curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
-sudo apt install apt-transport-https --yes
-echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
-sudo apt update -y
-sudo apt -y install helm
+echo "source <(kubectl completion bash |sed s/kubectl/k/g)" >>.bashrc
+echo "alias k=kubectl" >>.bashrc
 EOF

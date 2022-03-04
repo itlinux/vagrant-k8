@@ -1,32 +1,31 @@
-# Vagrantfile and Scripts to Automate Kubernetes Setup using Kubeadm  on VMware Fusion
+
+# Vagrantfile and Scripts to Automate Kubernetes Setup using Kubeadm [Practice Environemnt for CKA/CKAD and CKS Exams]
 
 ## Documentation
-Original REPO and docs can be found here: 
-    https://devopscube.com/kubernetes-cluster-vagrant/
+
+Refer this link for documentation: https://devopscube.com/kubernetes-cluster-vagrant/
 
 If you are preparing for CKA, CKAD or CKS exam, save $57 using code **DCUBEOFFER** at https://kube.promo/latest
-
 
 ## Prerequisites
 
 1. Working Vagrant setup
 2. 8 Gig + RAM workstation as the Vms use 3 vCPUS and 4+ GB RAM
-3. VMware Fusion
  
 ## Usage/Examples
 
 To provision the cluster, execute the following commands.
 
 ```shell
-git clone https://github.com/itlinux/vagrant-k8
-cd vagrant-k8
+git clone https://github.com/scriptcamp/vagrant-kubeadm-kubernetes.git
+cd vagrant-kubeadm-kubernetes
 vagrant up
 ```
 
 ## Set Kubeconfig file varaible.
 
 ```shell
-cd vagrant-k8
+cd vagrant-kubeadm-kubernetes
 cd configs
 export KUBECONFIG=$(PWD)/config
 ```
@@ -48,12 +47,10 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 Vagrant up will create the admin user token and saves in the configs directory.
 
 ```shell
-cd vagrant-k8
+cd vagrant-kubeadm-kubernetes
 cd configs
 cat token
 ```
-## Helm
-I have added HELM, so it's easy to install ingress or other services using the nice helm tool. 
 
 ## To shutdown the cluster, 
 
@@ -77,9 +74,3 @@ vagrant destroy -f
 
 If you want Centos based setup, please refer https://github.com/marthanda93/VAAS
   
-
-## Credit 
-The original repo comes from 
-    https://github.com/scriptcamp/vagrant-kubeadm-kubernetes
-
-I have applied some changes to what I see fit better on my use. 
