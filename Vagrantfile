@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
           vb.memory = 6048
           vb.cpus = 2
           vb.vmx["virtualhw.version"] = 18
-          vb.gui = true
+          vb.gui = false
       end
       master.vm.provision "shell", path: "scripts/common.sh"
       master.vm.provision "shell", path: "scripts/master.sh"
@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
           vb.memory = 3048
           vb.cpus = 1
           vb.vmx["virtualhw.version"] = 18
-          vb.gui = true
+          vb.gui = false
       end
       node.vm.provision "shell", path: "scripts/common.sh"
       node.vm.provision "shell", path: "scripts/node.sh"
